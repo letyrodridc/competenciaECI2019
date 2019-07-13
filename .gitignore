@@ -1,0 +1,10 @@
+optimization\ research/*
+weights/*
+data/*
+data.tar.gz
+csvs.tar.gz
+training_imgs.tar.gz
+weights.tar.gz
+train.tar.xz
+train.csv
+.ipynb*
