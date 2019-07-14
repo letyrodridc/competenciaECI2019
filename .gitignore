@@ -7,3 +7,11 @@ weights.tar.gz
 train.tar.xz
 train.csv
 .ipynb*
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.*~
+references.bib

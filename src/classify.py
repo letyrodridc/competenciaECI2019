@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import argparse
 
 import torch
@@ -14,8 +15,9 @@ import copy
 from torch.utils.data import DataLoader
 from torch.utils.data.sampler import SubsetRandomSampler
 from PIL import ImageFile
-from sklearn.metrics import balanced_accuracy_score
     
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 class ImageFolderWithPaths(datasets.ImageFolder):
     """Custom dataset that includes image file paths. Extends
@@ -100,7 +102,7 @@ def get_model(model_name, filename):
         num_ftrs = model_ft.classifier.in_features
         model_ft.classifier = nn.Linear(num_ftrs, num_classes)     
 
-    model_ft = model_ft.cuda()
+    model_ft = model_ft.to(device)
     model_ft.load_state_dict(torch.load(filename))
     return model_ft
 
@@ -115,7 +117,7 @@ def eval_model(model, data):
         for i, inputs  in enumerate(data):
             filenames = inputs[2]
             inputs = inputs[0]
-            inputs = inputs.cuda()
+            inputs = inputs.to(device)
             
 
             outputs = model(inputs)
