@@ -5,6 +5,8 @@
 #### Ejecución local
 
 ##### Descargar los pesos y copiarlos a:
+https://drive.google.com/file/d/1nuEaOCjDzf9b1LtChksesBbRdZ0RdWtz/view?usp=sharing (200MB aprox)
+
  `weights/resnet152_SGD_0.0001_LRSchedReduceLROnPlateau_20ep16bs_1563217792.pth`
 
 ##### Para crear el container
