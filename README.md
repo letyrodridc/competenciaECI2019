@@ -19,6 +19,6 @@ docker run --mount source=host_path_images,target=/images/0,type=bind letyrodri
 
 ##### Para copiar la solucion del container a la maquina host
 sacar el container_id haciendo docker 
-- docker ps -a docker 
+- docker ps -a 
 - docker cp containerid:/app/solution-letyrodri.csv ./solution-letyrodri.csv
 
